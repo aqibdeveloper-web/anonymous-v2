@@ -14,8 +14,8 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-8 text-sm text-zinc-400 font-medium">
           <a href="#" className="hover:text-white transition-colors">Services</a>
           <a href="#" className="hover:text-white transition-colors">Pricing</a>
-          <a href="#" className="hover:text-white transition-colors">Testimonials</a>
           <a href="#" className="hover:text-white transition-colors">Portfolio</a>
+          <a href="#" className="hover:text-white transition-colors">Testimonials</a>
         </nav>
 
         {/* Action Button */}

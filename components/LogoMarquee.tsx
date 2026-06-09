@@ -20,7 +20,7 @@ export default function LogoMarquee() {
     <section className="w-full bg-[#0d0d0d] py-12 flex flex-col items-center justify-center overflow-hidden border-b border-zinc-900/40 relative">
       
       {/* Small Section Label exactly like image_44e502.png */}
-      <p className="text-xs text-zinc-500 font-medium tracking-widest uppercase mb-8 select-none">
+      <p className="text-1.5xl sm:text-2xl md:text-3xl font-medium tracking-tight text-zinc-100 mb-8">
         Trusted by
       </p>
 
@@ -45,7 +45,7 @@ export default function LogoMarquee() {
           {duplicatedLogos.map((logo, index) => (
             <div 
               key={index} 
-              className="flex items-center justify-center w-24 sm:w-32 h-12 grayscale opacity-40 hover:opacity-100 hover:grayscale-0 transition-all duration-300 ease-in-out cursor-pointer select-none shrink-0"
+              className="flex items-center justify-center w-24 sm:w-32 h-12 opacity-40 hover:opacity-100 hover:grayscale-0 transition-all duration-300 ease-in-out cursor-pointer select-none shrink-0"
             >
               {/* Aap yahan direct <img> use kar sakte hain ya custom SVG */}
               <img 
