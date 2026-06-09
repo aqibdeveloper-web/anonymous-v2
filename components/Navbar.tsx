@@ -12,10 +12,10 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm text-zinc-400 font-medium">
-          <a href="#" className="hover:text-white transition-colors">Studio</a>
-          <a href="#" className="hover:text-white transition-colors">Hire</a>
-          <a href="#" className="hover:text-white transition-colors">Blog</a>
-          <a href="#" className="hover:text-white transition-colors">Log in</a>
+          <a href="#" className="hover:text-white transition-colors">Services</a>
+          <a href="#" className="hover:text-white transition-colors">Pricing</a>
+          <a href="#" className="hover:text-white transition-colors">Testimonials</a>
+          <a href="#" className="hover:text-white transition-colors">Portfolio</a>
         </nav>
 
         {/* Action Button */}

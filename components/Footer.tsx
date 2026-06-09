@@ -6,7 +6,7 @@ export default function PremiumCyberFooter() {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   return (
-    <footer className="w-full bg-[#050507] border-t border-white/[0.06] pt-20 pb-12 px-6 sm:px-12 md:px-24 relative overflow-hidden select-none">
+    <footer className="w-full bg-[#0D0D0D] border-t border-white/[0.06] pt-20 pb-12 px-6 sm:px-12 md:px-24 relative overflow-hidden select-none">
       
       {/* Background Cyber Ambient Glows */}
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[250px] bg-purple-600/[0.03] blur-[120px] pointer-events-none rounded-full" />
@@ -121,7 +121,7 @@ export default function PremiumCyberFooter() {
                 }}
                 className="w-1.5 h-1.5 rounded-full bg-zinc-700 transition-colors duration-300" 
               />
-              Instagram <span className="text-zinc-600 group-hover/soc:text-purple-400/80 pl-1 transition-colors">@itsnova</span>
+              Instagram <span className="text-zinc-600 group-hover/soc:text-purple-400/80 pl-1 transition-colors">@itsanonymous</span>
             </motion.a>
           </div>
 
@@ -129,10 +129,10 @@ export default function PremiumCyberFooter() {
           <div className="flex flex-col gap-2 col-span-2 md:col-span-1">
             <span className="text-[11px] font-bold tracking-widest text-zinc-400 font-sans uppercase mb-1">Email</span>
             <motion.a 
-              href="mailto:contact@itsnova.com" 
+              href="mailto:contact@itsanonymous.com" 
               className="text-xs text-zinc-400 hover:text-purple-400 font-medium font-mono tracking-tight transition-colors duration-300 break-all relative w-fit pb-1 group/email"
             >
-              contact@itsnova.com
+              contact@itsanonymous.com
               <motion.span 
                 className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-purple-500 to-indigo-500 origin-left"
                 initial={{ scaleX: 0 }}
@@ -146,7 +146,7 @@ export default function PremiumCyberFooter() {
 
         {/* Minimal Bottom Micro-Stamp */}
         <div className="mt-16 pt-6 border-t border-white/[0.03] flex flex-col sm:flex-row justify-between items-center gap-4 text-[9px] font-mono tracking-widest text-zinc-600">
-          <span>NOVA ECOSYSTEM SYSTEMS INC.</span>
+          <span>ANONYMOUS ECOSYSTEM SYSTEMS INC.</span>
           <span>ALL RIGHTS RESERVED</span>
         </div>
 

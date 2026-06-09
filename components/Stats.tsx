@@ -42,7 +42,7 @@ export default function Stats() {
   return (
     <section 
       ref={sectionRef}
-      className="w-full bg-[#0d0d0d] text-white flex flex-col items-center justify-center px-4 py-24 md:py-36 overflow-hidden border-t border-zinc-900/40 relative"
+      className="w-full bg-[#0D0D0D] text-white flex flex-col items-center justify-center px-4 py-24 md:py-36 overflow-hidden border-t border-zinc-900/40 relative"
     >
       {/* GLOBAL LAYOUT BOUNDARY - Locked inside max-w-7xl exactly like Hero */}
       <div className="w-full max-w-7xl flex flex-col items-center justify-center text-center relative z-10">

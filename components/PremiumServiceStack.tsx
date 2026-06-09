@@ -36,7 +36,7 @@ const stackData = [
 
 export default function PremiumServiceGrid() {
   return (
-    <section className="w-full bg-[#030305] py-24 px-6 sm:px-12 md:px-24 relative overflow-hidden select-none">
+    <section className="w-full bg-[#0D0D0D] py-24 px-6 sm:px-12 md:px-24 relative overflow-hidden select-none">
       
       {/* Ambient Premium Cyber Glows */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-500/[0.03] blur-[150px] pointer-events-none rounded-full z-0" />

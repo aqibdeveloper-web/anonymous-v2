@@ -36,7 +36,7 @@ export default function PremiumFeaturesDeck() {
 
   return (
     // Section se padding horizontal bilkul zero kardi taake full wide content stretch ho ske
-    <section className="w-full bg-[#050507] text-white py-28 overflow-hidden relative select-none">
+    <section className="w-full bg-[#0D0D0D] text-white py-28 overflow-hidden relative select-none">
       
       {/* Cyberpunk Neo-Futuristic Ambient Lights */}
       <div className="absolute top-0 right-1/4 w-[700px] h-[350px] bg-gradient-to-b from-purple-500/[0.02] to-transparent blur-3xl pointer-events-none rounded-full" />

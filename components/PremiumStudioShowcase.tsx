@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function PremiumStudioShowcase() {
   return (
-    <section className="w-full bg-[#050507] py-12 sm:py-20 px-4 sm:px-8 md:px-16 flex justify-center items-center">
+    <section className="w-full bg-[#0D0D0D] py-12 sm:py-20 px-4 sm:px-8 md:px-16 flex justify-center items-center">
       <div className="max-w-7xl w-full rounded-[24px] overflow-hidden border border-white/[0.06] relative h-[480px] sm:h-[560px] group shadow-[0_40px_80px_rgba(0,0,0,0.8)]">
         
         {/* ================= HIGH-END TECH ABSTRACT IMAGE LAYER ================= */}

@@ -80,7 +80,7 @@ export default function CreativeCoverflow() {
       ref={sectionRef}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => { setIsHovering(false); setIsDragging(false); }}
-      className={`w-full bg-[#030303] text-white py-24 overflow-hidden relative flex flex-col items-center justify-center min-h-screen select-none ${
+      className={`w-full bg-[#0D0D0D] text-white py-24 overflow-hidden relative flex flex-col items-center justify-center min-h-screen select-none ${
         isDragging ? "cursor-grabbing" : "cursor-none"
       }`}
     >

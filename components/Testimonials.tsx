@@ -52,7 +52,7 @@ const testimonialsRow2 = [
 
 export default function PremiumTestimonialsHorizon() {
   return (
-    <section className="w-full bg-[#050507] text-white py-32 overflow-hidden relative select-none flex flex-col justify-center">
+    <section className="w-full bg-[#0D0D0D] text-white py-32 overflow-hidden relative select-none flex flex-col justify-center">
       
       {/* ================= CYBER HIGH-END BACKGROUND AMBIENCE ================= */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-gradient-to-r from-purple-500/[0.02] via-indigo-500/[0.02] to-transparent blur-[140px] pointer-events-none rounded-full z-0" />
