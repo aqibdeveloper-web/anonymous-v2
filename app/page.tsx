@@ -10,6 +10,7 @@ import TabbedShowcase from "@/components/TabbedShowcase";
 import Testimonials from "@/components/Testimonials";
 import PremiumServiceStack from "@/components/PremiumServiceStack";
 import PremiumStudioShowcase from "@/components/PremiumStudioShowcase";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <Testimonials />
       <PremiumServiceStack />
       <PremiumStudioShowcase />
+      <Footer />
     </main>
   );
 }
