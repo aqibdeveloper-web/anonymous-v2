@@ -6,6 +6,10 @@ import DeviceShowcase from "@/components/DeviceShowcase";
 import VelocityMarquee from "@/components/VelocityMarquee";
 import CreativeCoverflow from "@/components/CreativeCoverflow";
 import { CreativeCommons } from "lucide-react";
+import TabbedShowcase from "@/components/TabbedShowcase";
+import Testimonials from "@/components/Testimonials";
+import PremiumServiceStack from "@/components/PremiumServiceStack";
+import PremiumStudioShowcase from "@/components/PremiumStudioShowcase";
 
 export default function Home() {
   return (
@@ -17,6 +21,10 @@ export default function Home() {
       <DeviceShowcase />
       <VelocityMarquee />
       <CreativeCoverflow />
+      <TabbedShowcase />
+      <Testimonials />
+      <PremiumServiceStack />
+      <PremiumStudioShowcase />
     </main>
   );
 }
