@@ -2,13 +2,13 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// ================= PREMIUM INQUIRY MODAL COMPONENT =================
 interface InquiryFormProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-function PremiumInquiryModal({ isOpen, onClose }: InquiryFormProps) {
+export default function PremiumInquiryModal({ isOpen, onClose }: InquiryFormProps) {
+  const [focusedField, setFocusedField] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,6 +27,7 @@ function PremiumInquiryModal({ isOpen, onClose }: InquiryFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // System Architecture Logic goes here
     console.log("VOID System Log: Project Blueprint Initiated", formData);
     onClose();
   };
@@ -35,7 +36,8 @@ function PremiumInquiryModal({ isOpen, onClose }: InquiryFormProps) {
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 select-none">
-          {/* Backdrop Blur Engine */}
+          
+          {/* ================= BACKDROP BLUR ENGINE ================= */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -44,7 +46,7 @@ function PremiumInquiryModal({ isOpen, onClose }: InquiryFormProps) {
             className="absolute inset-0 bg-black/80 backdrop-blur-md cursor-pointer"
           />
 
-          {/* Modal Frame System */}
+          {/* ================= MODAL FRAME SYSTEM ================= */}
           <motion.div
             initial={{ scale: 0.95, opacity: 0, y: 15 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -52,6 +54,7 @@ function PremiumInquiryModal({ isOpen, onClose }: InquiryFormProps) {
             transition={{ type: "spring", stiffness: 350, damping: 28 }}
             className="bg-gradient-to-b from-zinc-900/90 via-zinc-950/95 to-black border border-white/[0.08] w-full max-w-xl rounded-[28px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.9)] relative p-6 sm:p-8 md:p-10 z-10"
           >
+            
             {/* Ambient System Accent Glow Vector */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[150px] bg-[#c084fc]/[0.04] blur-[60px] pointer-events-none rounded-full" />
 
@@ -81,8 +84,9 @@ function PremiumInquiryModal({ isOpen, onClose }: InquiryFormProps) {
               </p>
             </div>
 
-            {/* Interactive Form Matrix */}
+            {/* ================= INTERACTIVE FORM MATRIX ================= */}
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              
               {/* Row 1: Credentials */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5 relative">
@@ -93,6 +97,8 @@ function PremiumInquiryModal({ isOpen, onClose }: InquiryFormProps) {
                     placeholder="e.g. Maverick Systems"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    onFocus={() => setFocusedField("name")}
+                    onBlur={() => setFocusedField(null)}
                     className="w-full bg-zinc-950/60 border border-white/[0.06] focus:border-[#dfaed6]/40 text-sm text-zinc-200 placeholder-zinc-700 px-4 py-3 rounded-xl transition-all duration-300 outline-none shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]"
                   />
                 </div>
@@ -105,12 +111,14 @@ function PremiumInquiryModal({ isOpen, onClose }: InquiryFormProps) {
                     placeholder="architecture@domain.com"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    onFocus={() => setFocusedField("email")}
+                    onBlur={() => setFocusedField(null)}
                     className="w-full bg-zinc-950/60 border border-white/[0.06] focus:border-[#dfaed6]/40 text-sm text-zinc-200 placeholder-zinc-700 px-4 py-3 rounded-xl transition-all duration-300 outline-none shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]"
                   />
                 </div>
               </div>
 
-              {/* Row 2: Divisions Selector */}
+              {/* Row 2: Core Division Segments Selector */}
               <div className="flex flex-col gap-2">
                 <label className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider pl-1">Target Core Division</label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
@@ -134,9 +142,9 @@ function PremiumInquiryModal({ isOpen, onClose }: InquiryFormProps) {
                 </div>
               </div>
 
-              {/* Row 3: Budgets */}
+              {/* Row 3: Operational Budgets Segment */}
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider pl-1">Allocated Resources Pool</label>
+                <label className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider pl-1">Allocated Resources Pool (Budget)</label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   {budgets.map((b) => (
                     <button
@@ -155,7 +163,7 @@ function PremiumInquiryModal({ isOpen, onClose }: InquiryFormProps) {
                 </div>
               </div>
 
-              {/* Row 4: Specifications */}
+              {/* Row 4: Specifications Blueprint */}
               <div className="flex flex-col gap-1.5">
                 <label className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider pl-1">Project Specifications & Objectives</label>
                 <textarea 
@@ -167,7 +175,7 @@ function PremiumInquiryModal({ isOpen, onClose }: InquiryFormProps) {
                 />
               </div>
 
-              {/* Action Button */}
+              {/* Action Vector Button Layout */}
               <button
                 type="submit"
                 className="group relative w-full py-4 mt-2 border border-white/10 hover:border-[#dfaed6]/40 bg-zinc-950 text-xs text-zinc-200 hover:text-white font-semibold uppercase tracking-[0.15em] rounded-xl transition-all duration-300 shadow-[0_12px_30px_rgba(0,0,0,0.6)] hover:shadow-[0_0_40px_rgba(223,174,214,0.12)] overflow-hidden"
@@ -175,119 +183,18 @@ function PremiumInquiryModal({ isOpen, onClose }: InquiryFormProps) {
                 <span className="relative z-10">Compile & Dispatch Blueprint</span>
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#dfaed6]/10 to-[#c084fc]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </button>
+
             </form>
 
+            {/* Modal Micro Stamp Footprint */}
             <div className="mt-8 pt-4 border-t border-white/[0.04] flex justify-between items-center text-[8px] font-mono tracking-widest text-zinc-600">
               <span>VOID MODULAR PROTOCOL INT.</span>
               <span>SECURE ENCRYPTED PIPELINE</span>
             </div>
+
           </motion.div>
         </div>
       )}
     </AnimatePresence>
-  );
-}
-
-// ================= PRIMARY NAVBAR LAYER =================
-export default function Navbar() {
-  const [isInquiryOpen, setIsInquiryOpen] = useState(false);
-
-  return (
-    <>
-      {/* High-End Pro Cyber Glitch & Core Glow System */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
-        
-        .gaming-font {
-          font-family: 'Syncopate', sans-serif;
-          text-transform: uppercase;
-        }
-
-        .glitch-container {
-          position: relative;
-          animation: main-glow 3s infinite alternate;
-        }
-
-        .glitch-layer-1 {
-          animation: glitch-skew-1 1.2s infinite linear alternate-reverse;
-          mask-image: linear-gradient(to bottom, transparent 20%, black 20%, black 40%, transparent 40%, transparent 60%, black 60%);
-        }
-
-        .glitch-layer-2 {
-          animation: glitch-skew-2 0.8s infinite linear alternate-reverse;
-          mask-image: linear-gradient(to bottom, black 10%, transparent 10%, transparent 30%, black 30%, black 70%, transparent 70%);
-        }
-
-        @keyframes main-glow {
-          0% { filter: drop-shadow(0 0 4px rgba(223,174,214,0.4)) drop-shadow(0 0 10px rgba(192,132,252,0.2)); }
-          100% { filter: drop-shadow(0 0 8px rgba(223,174,214,0.7)) drop-shadow(0 0 18px rgba(192,132,252,0.4)); }
-        }
-
-        @keyframes glitch-skew-1 {
-          0% { transform: skew(0deg) translateX(0); }
-          10% { transform: skew(-2deg) translateX(-1px); }
-          20% { transform: skew(3deg) translateX(2px); }
-          25% { transform: skew(0deg) translateX(0); }
-          70% { transform: skew(-1deg) translateX(-0.5px); }
-          75% { transform: skew(4deg) translateX(3px); }
-          80% { transform: skew(-4deg) translateX(-2px); }
-          85% { transform: skew(0deg) translateX(0); }
-          100% { transform: skew(1deg) translateX(0.5px); }
-        }
-
-        @keyframes glitch-skew-2 {
-          0% { transform: skew(0deg) translateX(0); }
-          15% { transform: skew(4deg) translateX(2px); text-shadow: 2px 0 #22d3ee; }
-          30% { transform: skew(-3deg) translateX(-2px); text-shadow: -2px 0 #dfaed6; }
-          45% { transform: skew(0deg) translateX(0); }
-          50% { transform: skew(2deg) translateX(1px); }
-          55% { transform: skew(-5deg) translateX(-3px); }
-          60% { transform: skew(0deg) translateX(0); }
-          100% { transform: skew(-1deg) translateX(-1px); }
-        }
-      `}</style>
-
-      <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-        <div className="w-full max-w-3xl bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/60 rounded-full py-3 px-6 flex items-center justify-between shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-          
-          {/* Logo Container with Complex Glitch Layers */}
-          <div className="flex items-center cursor-pointer select-none glitch-container h-8 w-24 relative justify-center">
-            {/* Base Text (Solid Background Layer) */}
-            <span className="gaming-font font-extrabold text-xl tracking-[0.15em] scale-y-95 text-transparent bg-clip-text bg-gradient-to-r from-[#dfaed6] via-[#d6a2e8] to-[#c084fc] absolute">
-              VOID
-            </span>
-
-            {/* Glitch Layer 1 - Cyan-tinted split shift */}
-            <span className="gaming-font glitch-layer-1 font-extrabold text-xl tracking-[0.15em] scale-y-95 text-[#22d3ee]/40 absolute mix-blend-screen select-none pointer-events-none">
-              VOID
-            </span>
-
-            {/* Glitch Layer 2 - Pink-tinted split shift */}
-            <span className="gaming-font glitch-layer-2 font-extrabold text-xl tracking-[0.15em] scale-y-95 text-[#dfaed6]/50 absolute mix-blend-screen select-none pointer-events-none">
-              VOID
-            </span>
-          </div>
-
-          {/* Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8 text-sm text-zinc-400 font-medium">
-            <a href="#" className="hover:text-white transition-colors">Services</a>
-            <a href="#" className="hover:text-white transition-colors">Pricing</a>
-            <a href="#" className="hover:text-white transition-colors">Portfolio</a>
-            <a href="#" className="hover:text-white transition-colors">Testimonials</a>
-          </nav>
-
-          {/* Action Button - Linked to the system core blueprint popup */}
-          <button 
-            onClick={() => setIsInquiryOpen(true)}
-            className="bg-white text-black text-xs md:text-sm font-semibold px-5 py-2 rounded-full hover:bg-zinc-200 transition-all cursor-pointer shadow-[0_0_20px_rgba(255,255,255,0.1)]"
-          >
-            Sign up
-          </button>
-        </div>
-      </header>
-
-      {/* Global Mounting Vector for Inquiry Portal */}
-      <PremiumInquiryModal isOpen={isInquiryOpen} onClose={() => setIsInquiryOpen(false)} />
-    </>
   );
 }

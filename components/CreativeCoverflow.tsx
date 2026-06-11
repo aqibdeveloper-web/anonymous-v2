@@ -1,15 +1,15 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, useMotionValueEvent } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, useMotionValueEvent, MotionValue } from "framer-motion";
 
 const items = [
-  { type: "image", src: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&q=80", title: "Creative Narrative", author: "Alex Rivers", role: "Director" },
-  { type: "image", src: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=80", title: "Vanguard Fashion", author: "Sophia Stark", role: "Cinematographer" },
-  { type: "image", src: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=600&q=80", title: "Cinematic Overlays", author: "Marcus Vance", role: "VFX Artist" },
-  { type: "image", src: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?w=600&q=80", title: "Altered States", author: "Dylan Chawles", role: "Groomer, Hair Stylist" },
-  { type: "video", src: "https://assets.mixkit.co/videos/preview/mixkit-retro-futuristic-sci-fi-background-42359-large.mp4", title: "Neon Cyberpunk 2026", author: "Aqib Dev", role: "3D Artist" },
-  { type: "image", src: "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=600&q=80", title: "Ethereal Soundscapes", author: "Elena Rostova", role: "Producer" },
-  { type: "image", src: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80", title: "Visual Arts", author: "Chris Dawn", role: "Designer" },
+  { type: "image", src: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&q=80", title: "E-Commerce Core System", author: "VOID Dev", role: "Website Development" },
+  { type: "image", src: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=80", title: "FinTech Neo-Banking App", author: "VOID Mobile", role: "Mobile App Development" },
+  { type: "image", src: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=600&q=80", title: "Global Authority Strategy", author: "VOID SEO", role: "SEO Optimization" },
+  { type: "image", src: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?w=600&q=80", title: "Cyber Gaming Identity", author: "VOID Brand", role: "Branding & Graphics" },
+  { type: "video", src: "https://assets.mixkit.co/videos/preview/mixkit-retro-futuristic-sci-fi-background-42359-large.mp4", title: "Next-Gen Software Portal", author: "VOID Dev", role: "Website Development" },
+  { type: "image", src: "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=600&q=80", title: "SaaS Dashboard Architecture", author: "VOID UI", role: "UI/UX Architecture" },
+  { type: "image", src: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80", title: "Enterprise Scaling Node", author: "VOID Growth", role: "SEO & Automation" },
 ];
 
 export default function CreativeCoverflow() {
@@ -84,14 +84,14 @@ export default function CreativeCoverflow() {
         isDragging ? "cursor-grabbing" : "cursor-none"
       }`}
     >
-      {/* High-End Ambient Studio Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-gradient-to-tr from-white/[0.02] to-transparent pointer-events-none z-0 blur-3xl rounded-full" />
+      {/* High-End Ambient Studio Glow - Configured with Brand Hex Palette */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-gradient-to-tr from-[#c084fc]/[0.03] to-transparent pointer-events-none z-0 blur-3xl rounded-full" />
 
       {/* Cyber-Minimalist Follower Cursor */}
       <AnimatePresence>
         {isHovering && !isDragging && (
           <motion.div
-            className="hidden md:flex fixed w-12 h-12 bg-white/[0.08] backdrop-blur-md border border-white/20 rounded-full items-center justify-center pointer-events-none z-50 text-white shadow-[0_0_25px_rgba(255,255,255,0.06)]"
+            className="hidden md:flex fixed w-12 h-12 bg-[#dfaed6]/[0.08] backdrop-blur-md border border-[#c084fc]/30 rounded-full items-center justify-center pointer-events-none z-50 text-white shadow-[0_0_25px_rgba(192,132,252,0.1)]"
             style={{
               left: cursorPos.x,
               top: cursorPos.y,
@@ -115,10 +115,10 @@ export default function CreativeCoverflow() {
       {/* Header Controls */}
       <div className="text-center max-w-3xl mb-16 px-6 relative z-10 pointer-events-none">
         <h2 className="text-3xl sm:text-4xl md:text-[38px] font-medium font-sans tracking-tight bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent leading-[1.2] max-w-xl mx-auto">
-          Trusted by industry leading creatives to showcase their work
+          Case Studies Built To Benchmark The Industry Standard
         </h2>
         <p className="text-xs sm:text-sm text-zinc-500 font-normal max-w-md mt-4 leading-relaxed mx-auto opacity-70 tracking-wide">
-          The NOVA portfolio was built to give clients the right information for hiring and allow creatives to showcase their work to a world-class audience.
+          The <span className="text-[#dfaed6]">VOID</span> portfolio showcases next-generation web architectures, responsive mobile systems, high-growth technical SEO, and cutting-edge visual identities.
         </p>
       </div>
 
@@ -245,7 +245,7 @@ function CoverflowCard({ item, idx, springDragX, activeIndex, step, cardWidth, o
               transition={{ type: "spring", stiffness: 400, damping: 24 }}
               className="w-full p-5 flex flex-col"
             >
-              <h4 className="text-[15px] font-normal text-zinc-100 tracking-tight mb-2.5">
+              <h4 className="text-[15px] font-normal text-zinc-100 tracking-tight mb-2.5 group-hover:text-[#dfaed6] transition-colors drop-shadow-[0_0_8px_rgba(223,174,214,0.1)]">
                 {item.title}
               </h4>
               
@@ -253,12 +253,12 @@ function CoverflowCard({ item, idx, springDragX, activeIndex, step, cardWidth, o
               
               <div className="flex items-center gap-2.5">
                 {/* Minimalist Profile Initials Disc */}
-                <div className="w-[26px] h-[26px] rounded-full bg-zinc-800/90 border border-white/10 text-[10px] flex items-center justify-center font-medium text-zinc-300 uppercase shrink-0">
+                <div className="w-[26px] h-[26px] rounded-full bg-zinc-800/90 border border-[#dfaed6]/20 text-[10px] flex items-center justify-center font-medium text-zinc-300 uppercase shrink-0">
                   {item.author.substring(0, 2)}
                 </div>
                 <div className="flex flex-col">
                   <span className="text-xs font-medium text-zinc-200 leading-none">{item.author}</span>
-                  <span className="text-[10px] text-zinc-500 tracking-normal font-light mt-1">{item.role}</span>
+                  <span className="text-[10px] text-[#c084fc] tracking-normal font-light mt-1">{item.role}</span>
                 </div>
               </div>
             </motion.div>

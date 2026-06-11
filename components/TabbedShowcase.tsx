@@ -2,27 +2,26 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// High-end Mock Data for Both States
-const hiringFeatures = [
-  { id: 1, tag: "New", title: "Share jobs directly to socials", desc: "Share your job on other social platforms to maximize visibility and engagement.", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&q=80" },
-  { id: 2, tag: "", title: "Post jobs in seconds", desc: "Post jobs with ease and customize to get exactly what you're looking for.", img: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=500&q=80" },
-  { id: 3, tag: "", title: "Message creatives", desc: "Communicate directly with creatives who might be a fit for your project.", img: "https://images.unsplash.com/photo-1618005198143-e5283b519a7f?w=500&q=80" },
-  { id: 4, tag: "", title: "Discover new talent, curated by us", desc: "Curated lists that highlight creatives in the NOVA community who are pushing our industry forward.", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80" },
-  { id: 5, tag: "New", title: "Job tracking", desc: "Keep track of all your incoming applicants and potential hires on your Job dashboard.", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80" },
+// High-end Mock Data aligned with Agency Deliverables & Product Strategy
+const serviceFeatures = [
+  { id: 1, tag: "Core", title: "Next-Gen Web Architecture", desc: "Production-grade websites built with performance-first architectures, seamless custom systems, and flawless animations.", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&q=80" },
+  { id: 2, tag: "Native", title: "Cross-Platform Mobile Apps", desc: "High-performance iOS and Android applications designed with smooth micro-interactions and robust offline capabilities.", img: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=500&q=80" },
+  { id: 3, tag: "Growth", title: "Technical SEO Domination", desc: "Advanced programmatic SEO structures, intent-focused keyword mapping, and premium indexing strategies for global reach.", img: "https://images.unsplash.com/photo-1618005198143-e5283b519a7f?w=500&q=80" },
+  { id: 4, tag: "Identity", title: "Premium Brand Engineering", desc: "Cohesive visual identities, premium vector design systems, and bespoke typography that position your brand at the absolute top.", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80" },
 ];
 
-const findingWorkFeatures = [
-  { id: 6, tag: "Hot", title: "Build an elite portfolio", desc: "Showcase your case studies with neo-futuristic layouts that grab agency attention immediately.", img: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=500&q=80" },
-  { id: 7, tag: "", title: "Direct inbound pitches", desc: "Receive high-ticket project scopes straight into your messaging deck without cold outreach.", img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&q=80" },
-  { id: 8, tag: "New", title: "Global Escrow Protection", desc: "Milestone based secure smart contracts so you never have to chase invoices again.", img: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=500&q=80" },
-  { id: 9, tag: "", title: "Real-time tracking analytics", desc: "See exactly when an agency opens your profile, views your pricing sheet, or clicks your resume.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80" },
+const processFeatures = [
+  { id: 5, tag: "Phase 01", title: "Deep Discovery & Audit", desc: "We map out your direct competitors, audit technical vulnerabilities, and engineer an airtight development blueprint.", img: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=500&q=80" },
+  { id: 6, tag: "Phase 02", title: "Interactive UX Wireframing", desc: "Laying out complex user journeys into intuitive, high-fidelity prototypes built entirely for structural retention.", img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&q=80" },
+  { id: 7, tag: "Phase 03", title: "Clean Room Engineering", desc: "Writing highly maintainable, type-safe code optimized for rapid response cycles, scale, and extreme security benchmarks.", img: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=500&q=80" },
+  { id: 8, tag: "Phase 04", title: "Optimization & Delivery", desc: "Meticulous stress-testing across devices, structural speed tune-ups, and schema injection before pushing production live.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80" },
 ];
 
 export default function PremiumFeaturesDeck() {
-  const [activeTab, setActiveTab] = useState<"hiring" | "work">("hiring");
+  const [activeTab, setActiveTab] = useState<"services" | "process">("services");
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  const currentFeatures = activeTab === "hiring" ? hiringFeatures : findingWorkFeatures;
+  const currentFeatures = activeTab === "services" ? serviceFeatures : processFeatures;
 
   const scrollSlider = (direction: "left" | "right") => {
     if (sliderRef.current) {
@@ -38,51 +37,51 @@ export default function PremiumFeaturesDeck() {
     // Section se padding horizontal bilkul zero kardi taake full wide content stretch ho ske
     <section className="w-full bg-[#0D0D0D] text-white py-28 overflow-hidden relative select-none">
       
-      {/* Cyberpunk Neo-Futuristic Ambient Lights */}
-      <div className="absolute top-0 right-1/4 w-[700px] h-[350px] bg-gradient-to-b from-purple-500/[0.02] to-transparent blur-3xl pointer-events-none rounded-full" />
-      <div className="absolute bottom-12 left-10 w-[600px] h-[450px] bg-gradient-to-tr from-zinc-500/[0.01] to-transparent blur-3xl pointer-events-none rounded-full" />
+      {/* Cyberpunk Neo-Futuristic Ambient Lights configured with Brand Hexes */}
+      <div className="absolute top-0 right-1/4 w-[700px] h-[350px] bg-gradient-to-b from-[#c084fc]/[0.03] to-transparent blur-3xl pointer-events-none rounded-full" />
+      <div className="absolute bottom-12 left-10 w-[600px] h-[450px] bg-gradient-to-tr from-[#dfaed6]/[0.01] to-transparent blur-3xl pointer-events-none rounded-full" />
 
       {/* ================= HEADER CONTROL BAR ================= */}
       {/* Is header box me screen paddings control ki hain taake text alignment standard max-width me align rahe */}
       <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 px-6 sm:px-12 md:px-20 relative z-20">
         <div className="flex flex-col gap-2.5">
-          <span className="text-xs font-semibold text-purple-400 uppercase tracking-widest pl-0.5">
-            Features
+          <span className="text-xs font-semibold text-[#dfaed6] uppercase tracking-widest pl-0.5">
+            Capabilities
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-[38px] font-medium font-sans tracking-tight bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent leading-tight max-w-xl">
-            A do-it-all tool for creative work
+            A do-it-all engine for your digital footprint
           </h2>
         </div>
 
         {/* Dynamic High-End Tab Filter Switch */}
         <div className="flex bg-zinc-950/80 border border-white/[0.05] p-1 rounded-full relative shadow-[0_10px_30px_rgba(0,0,0,0.5)] self-start md:self-auto shrink-0">
           <button
-            onClick={() => setActiveTab("hiring")}
+            onClick={() => setActiveTab("services")}
             className={`px-6 py-2 text-xs font-medium tracking-tight rounded-full relative z-10 transition-colors duration-300 ${
-              activeTab === "hiring" ? "text-black font-semibold" : "text-zinc-400 hover:text-white"
+              activeTab === "services" ? "text-black font-semibold" : "text-zinc-400 hover:text-white"
             }`}
           >
-            For hiring
-            {activeTab === "hiring" && (
+            Our Services
+            {activeTab === "services" && (
               <motion.div
                 layoutId="activeTabPill"
-                className="absolute inset-0 bg-gradient-to-r from-purple-300 to-indigo-200 rounded-full -z-10 shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                className="absolute inset-0 bg-gradient-to-r from-[#dfaed6] to-[#c084fc] rounded-full -z-10 shadow-[0_0_15px_rgba(223,174,214,0.3)]"
                 transition={{ type: "spring", stiffness: 380, damping: 30 }}
               />
             )}
           </button>
           
           <button
-            onClick={() => setActiveTab("work")}
+            onClick={() => setActiveTab("process")}
             className={`px-6 py-2 text-xs font-medium tracking-tight rounded-full relative z-10 transition-colors duration-300 ${
-              activeTab === "work" ? "text-black font-semibold" : "text-zinc-400 hover:text-white"
+              activeTab === "process" ? "text-black font-semibold" : "text-zinc-400 hover:text-white"
             }`}
           >
-            For finding work
-            {activeTab === "work" && (
+            Our Process
+            {activeTab === "process" && (
               <motion.div
                 layoutId="activeTabPill"
-                className="absolute inset-0 bg-gradient-to-r from-purple-300 to-indigo-200 rounded-full -z-10 shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                className="absolute inset-0 bg-gradient-to-r from-[#dfaed6] to-[#c084fc] rounded-full -z-10 shadow-[0_0_15px_rgba(223,174,214,0.3)]"
                 transition={{ type: "spring", stiffness: 380, damping: 30 }}
               />
             )}
@@ -98,7 +97,7 @@ export default function PremiumFeaturesDeck() {
         <div className="absolute top-[35%] left-6 z-30 pointer-events-auto opacity-0 group-hover/deck:opacity-100 transition-opacity duration-300 hidden xl:flex">
           <button 
             onClick={() => scrollSlider("left")}
-            className="w-11 h-11 rounded-full bg-zinc-900/90 border border-white/[0.08] backdrop-blur-xl flex items-center justify-center text-zinc-300 hover:text-white hover:border-white/20 transition-all shadow-[0_15px_30px_rgba(0,0,0,0.8)]"
+            className="w-11 h-11 rounded-full bg-zinc-900/90 border border-white/[0.08] backdrop-blur-xl flex items-center justify-center text-zinc-300 hover:text-white hover:border-[#dfaed6]/40 transition-all shadow-[0_15px_30px_rgba(0,0,0,0.8)]"
           >
             ‹
           </button>
@@ -107,7 +106,7 @@ export default function PremiumFeaturesDeck() {
         <div className="absolute top-[35%] right-6 z-30 pointer-events-auto opacity-0 group-hover/deck:opacity-100 transition-opacity duration-300 hidden xl:flex">
           <button 
             onClick={() => scrollSlider("right")}
-            className="w-11 h-11 rounded-full bg-zinc-900/90 border border-white/[0.08] backdrop-blur-xl flex items-center justify-center text-zinc-300 hover:text-white hover:border-white/20 transition-all shadow-[0_15px_30px_rgba(0,0,0,0.8)]"
+            className="w-11 h-11 rounded-full bg-zinc-900/90 border border-white/[0.08] backdrop-blur-xl flex items-center justify-center text-zinc-300 hover:text-white hover:border-[#dfaed6]/40 transition-all shadow-[0_15px_30px_rgba(0,0,0,0.8)]"
           >
             ›
           </button>
@@ -141,7 +140,7 @@ export default function PremiumFeaturesDeck() {
               >
                 
                 {/* Glassmorphism Mock Canvas Visual Box */}
-                <div className="w-full aspect-[4/3.4] rounded-[20px] bg-zinc-900/30 border border-white/[0.04] p-5 flex items-center justify-center relative overflow-hidden backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 group-hover/card:border-white/[0.09] group-hover/card:bg-zinc-900/40">
+                <div className="w-full aspect-[4/3.4] rounded-[20px] bg-zinc-900/30 border border-white/[0.04] p-5 flex items-center justify-center relative overflow-hidden backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 group-hover/card:border-[#dfaed6]/20 group-hover/card:bg-zinc-900/40">
                   
                   {/* Subtle Inner Highlight Shadow */}
                   <div className="absolute inset-0 border border-white/[0.03] rounded-[20px] pointer-events-none z-10" />
@@ -151,7 +150,7 @@ export default function PremiumFeaturesDeck() {
 
                   {/* New/Hot Accent Badge */}
                   {feat.tag && (
-                    <span className="absolute top-4 right-4 bg-white/[0.06] border border-white/10 text-[10px] font-medium tracking-wide text-zinc-300 px-2.5 py-1 rounded-md backdrop-blur-md shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+                    <span className="absolute top-4 right-4 bg-zinc-950/60 border border-[#c084fc]/20 text-[10px] font-medium tracking-wide text-[#dfaed6] px-2.5 py-1 rounded-md backdrop-blur-md shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
                       {feat.tag}
                     </span>
                   )}

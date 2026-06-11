@@ -4,12 +4,12 @@ import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from
 
 // Digital Agency Services Array for Infinite Auto-Typing Loop
 const DIGITAL_SERVICES = [
-  "Custom Web Architecture",
-  "Neo-Futuristic UI/UX",
-  "Premium SaaS Solutions",
-  "High-End Web Development",
-  "Next-Gen Digital Systems",
-  "Brand Identity Design"
+  "Website Development",
+  "Mobile App Development",
+  "SEO Optimization",
+  "Branding & Identity",
+  "Next-Gen UI/UX Systems",
+  "Custom Digital Products"
 ];
 
 export default function Hero() {
@@ -69,7 +69,7 @@ export default function Hero() {
       className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 pb-24 pt-24 overflow-hidden bg-[#0D0D0D] text-white select-none"
     >
       {/* Ambient Radial Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(147,51,234,0.03),transparent_65%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(223,174,214,0.04),transparent_65%)] pointer-events-none" />
 
       {/* ======================================================================
         GLOBAL LAYOUT BOUNDARY CONTAINER (max-w-7xl)
@@ -94,7 +94,7 @@ export default function Hero() {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -15, opacity: 0 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className="px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-950/20 text-purple-300 font-medium backdrop-blur-sm shadow-[0_0_20px_rgba(147,51,234,0.15)] whitespace-nowrap block"
+                  className="px-4 py-1.5 rounded-full border border-[#c084fc]/30 bg-[#c084fc]/10 text-[#dfaed6] font-medium backdrop-blur-sm shadow-[0_0_20px_rgba(223,174,214,0.15)] whitespace-nowrap block"
                 >
                   {DIGITAL_SERVICES[index]}
                 </motion.span>
@@ -112,11 +112,11 @@ export default function Hero() {
           className="absolute top-24 left-[2%] md:left-[10%] max-w-[180px] md:max-w-[220px] bg-white/[0.01] border border-white/[0.05] p-3 md:p-4 rounded-2xl backdrop-blur-md hidden sm:block shadow-2xl"
         >
           <div className="flex items-center gap-2 mb-1.5">
-            <div className="w-4 h-4 rounded-full bg-purple-500/20 border border-purple-400/40 flex items-center justify-center text-[9px]">⚡</div>
+            <div className="w-4 h-4 rounded-full bg-[#dfaed6]/20 border border-[#dfaed6]/40 flex items-center justify-center text-[9px]">⚡</div>
             <span className="text-[11px] font-semibold text-zinc-400">Goshi</span>
           </div>
           <p className="text-[10px] md:text-[11px] text-zinc-400 leading-relaxed">
-            <strong className="text-zinc-200 font-medium">Next.js Architecture</strong> needed in Los Angeles.
+            <strong className="text-zinc-200 font-medium">Website Development</strong> needed in Los Angeles.
           </p>
         </motion.div>
 
@@ -126,11 +126,11 @@ export default function Hero() {
           className="absolute top-32 right-[2%] md:right-[10%] max-w-[200px] md:max-w-[240px] bg-white/[0.01] border border-white/[0.05] p-3 md:p-4 rounded-2xl backdrop-blur-md hidden md:block shadow-2xl"
         >
           <div className="flex items-center gap-2 mb-1.5">
-            <div className="w-4 h-4 rounded-full bg-indigo-500/20 border border-indigo-400/40 flex items-center justify-center text-[9px]">🎨</div>
+            <div className="w-4 h-4 rounded-full bg-[#c084fc]/20 border border-[#c084fc]/40 flex items-center justify-center text-[9px]">🎨</div>
             <span className="text-[11px] font-semibold text-zinc-400">PizzaSlime</span>
           </div>
           <p className="text-[10px] md:text-[11px] text-zinc-400 leading-relaxed">
-            Full-time <strong className="text-zinc-200 font-medium">Cyber UI Designer</strong> needed in LA.
+            Full-time <strong className="text-zinc-200 font-medium">Branding & UI Specialist</strong> needed in LA.
           </p>
         </motion.div>
 
@@ -149,7 +149,7 @@ export default function Hero() {
           <div className="max-w-[200px] sm:max-w-[210px] bg-[#050507]/80 border border-white/[0.05] p-3 rounded-xl shadow-2xl backdrop-blur-md text-left">
             <span className="text-[10px] md:text-[11px] font-medium text-zinc-300 block">Conor Cunningham</span>
             <p className="text-[9px] md:text-[10px] text-zinc-400 mt-1">
-              <strong className="text-zinc-300 font-medium">SaaS Systems Engineer</strong> needed in Miami.
+              <strong className="text-zinc-300 font-medium">Mobile App Engineer</strong> needed in Miami.
             </p>
           </div>
         </motion.div>
@@ -162,7 +162,7 @@ export default function Hero() {
           <div className="max-w-[200px] bg-[#050507]/80 border border-white/[0.05] p-3 rounded-xl shadow-2xl backdrop-blur-md text-left sm:translate-y-4 sm:-translate-x-4 z-20">
             <span className="text-[10px] md:text-[11px] font-medium text-zinc-300 block">Aidan Cullen</span>
             <p className="text-[9px] md:text-[10px] text-zinc-400 mt-1">
-              <strong className="text-zinc-300 font-medium">Creative Web Director</strong> needed for an scale asset.
+              <strong className="text-zinc-300 font-medium">SEO & Marketing Director</strong> needed for scale assets.
             </p>
           </div>
           <div className="w-24 h-28 sm:w-36 sm:h-52 md:w-44 md:h-60 rounded-xl overflow-hidden border border-white/[0.05] bg-zinc-900 shadow-2xl shrink-0">
@@ -180,8 +180,8 @@ export default function Hero() {
           className="absolute bottom-6 max-w-[240px] bg-white/[0.01] border border-white/[0.05] px-4 py-2.5 rounded-xl backdrop-blur-md hidden lg:block shadow-xl text-center"
         >
           <p className="text-[10px] text-zinc-400 font-mono tracking-tight">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-purple-500 mr-1.5 animate-pulse" />
-            Cloud Database Developer needed globally.
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#dfaed6] mr-1.5 animate-pulse" />
+            SEO & Brand Strategy consultants needed globally.
           </p>
         </motion.div>
 

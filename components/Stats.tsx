@@ -34,9 +34,10 @@ export default function Stats() {
   const isHeadingInView = useInView(sectionRef, { once: true, margin: "-80px" });
 
   const statsData = [
-    { value: 24000, suffix: "+", label: "Jobs posted" },
-    { value: 500, suffix: "+", label: "Cities globally" },
-    { value: 200, suffix: "+", label: "Disciplines" },
+    { value: 150, suffix: "+", label: "Projects Delivered" },
+    { value: 40, suffix: "+", label: "Apps Launched" },
+    { value: 500, suffix: "+", label: "Keywords Ranked" },
+    { value: 80, suffix: "+", label: "Brands Transformed" },
   ];
 
   return (
@@ -53,7 +54,7 @@ export default function Stats() {
           {/* ================= DEAD CENTER RADIAL GLOW =================
             Heading container ke center par locked hai.
           */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[550px] h-[180px] sm:h-[280px] bg-gradient-to-r from-purple-600/15 via-pink-500/10 to-purple-600/15 rounded-full blur-[100px] sm:blur-[120px] pointer-events-none select-none z-0" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[550px] h-[180px] sm:h-[280px] bg-gradient-to-r from-[#c084fc]/15 via-[#dfaed6]/10 to-[#c084fc]/15 rounded-full blur-[100px] sm:blur-[120px] pointer-events-none select-none z-0" />
 
           {/* Main Heading Layer with Fade up */}
           <motion.h2 
@@ -62,11 +63,11 @@ export default function Stats() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.25] md:leading-[1.2] text-zinc-100 relative z-10 w-full"
           >
-            <span className="bg-gradient-to-r from-purple-400 via-pink-300 to-purple-400 bg-clip-text text-transparent inline-block">
+            <span className="bg-gradient-to-r from-[#dfaed6] via-[#c084fc] to-[#dfaed6] bg-clip-text text-transparent inline-block">
               $60M+
             </span>{" "}
             generated for <br className="sm:hidden" /> creatives in just{" "}
-            <span className="bg-gradient-to-r from-pink-300 via-purple-300 to-pink-200 bg-clip-text text-transparent inline-block">
+            <span className="bg-gradient-to-r from-[#dfaed6] via-[#c084fc] to-[#dfaed6] bg-clip-text text-transparent inline-block">
               16 months
             </span>
           </motion.h2>
@@ -82,7 +83,7 @@ export default function Stats() {
           {statsData.map((stat, idx) => (
             <div 
               key={idx}
-              className="w-full sm:w-1/3 bg-zinc-900/20 border border-zinc-800/40 rounded-2xl py-5 px-6 backdrop-blur-md transition-all duration-300 hover:border-zinc-700/60 shadow-[0_4px_20px_rgba(0,0,0,0.2)] text-center group"
+              className="w-full sm:w-1/4 bg-zinc-900/20 border border-zinc-800/40 rounded-2xl py-5 px-6 backdrop-blur-md transition-all duration-300 hover:border-zinc-700/60 shadow-[0_4px_20px_rgba(0,0,0,0.2)] text-center group"
             >
               <div className="text-xl md:text-2xl tracking-tight text-zinc-100 group-hover:text-white transition-colors">
                 <Counter value={stat.value} suffix={stat.suffix} />
