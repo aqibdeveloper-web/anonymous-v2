@@ -41,7 +41,8 @@ export default function CreativeCoverflow() {
       }
     };
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeMouseMove || window.removeEventListener("mousemove", handleMouseMove);
+    // Yeh line bilkul aisi honi chahiye, puraani window.removeMouseMove condition hata dein
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   // Frame-rate safe index transition engine
@@ -53,7 +54,7 @@ export default function CreativeCoverflow() {
     }
   });
 
-  const handleDragEnd = (event: any, info: any) => {
+  const handleDragEnd = (event: unknown, info: { velocity: { x: number } }) => {
     setIsDragging(false);
     const swipeVelocity = info.velocity.x;
     const currentOffset = dragX.get();
