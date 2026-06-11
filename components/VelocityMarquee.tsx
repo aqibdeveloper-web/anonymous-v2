@@ -9,7 +9,6 @@ import {
   useMotionValue,
 } from "framer-motion";
 
-// Row 1 Data (Top)
 const row1Items = [
   { text: "Content", img: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=150&q=80" },
   { text: "Campaigns", img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=150&q=80" },
@@ -21,7 +20,6 @@ const row1Items = [
   { text: "Events", img: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=150&q=80" },
 ];
 
-// Row 2 Data (Bottom)
 const row2Items = [
   { text: "Social Media", img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=150&q=80" },
   { text: "Stage Design", img: "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=150&q=80" },
@@ -38,32 +36,25 @@ interface MarqueeRowProps {
   baseVelocity: number; 
 }
 
-function MarqueeRow({ items, baseVelocity = 5 }: MarqueeRowProps) {
+function MarqueeRow({ items, baseVelocity = 1 }: MarqueeRowProps) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
-  
   const scrollVelocity = useVelocity(scrollY);
   
-  const velocityFactor = useTransform(scrollVelocity, [0, 1000], [0, 5], {
-    clamp: false,
+  // High-end smooth velocity mapping. Scroll karne par thoda sa accelerate hoga bas.
+  const velocityFactor = useTransform(scrollVelocity, [0, 1000], [1, 3], {
+    clamp: true,
   });
 
-  const directionFactor = useRef<number>(1);
-  
-  useAnimationFrame((time, delta) => {
-    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
-
-    if (velocityFactor.get() !== 0) {
-      moveBy += directionFactor.current * moveBy * velocityFactor.get();
-    }
-
+ useAnimationFrame((time, delta) => {
+    // let ko badal kar const kar diya hai taake linting error door ho jaye
+    const moveBy = baseVelocity * (delta / 1000) * velocityFactor.get();
     baseX.set(baseX.get() + moveBy);
     
-    // Smooth wrapping mechanic based on standard duplicated sets boundary
-    if (baseX.get() <= -25) {
+    if (baseX.get() <= -50) {
       baseX.set(0);
     } else if (baseX.get() > 0) {
-      baseX.set(-25);
+      baseX.set(-50);
     }
   });
 
@@ -78,7 +69,6 @@ function MarqueeRow({ items, baseVelocity = 5 }: MarqueeRowProps) {
             key={idx}
             className="flex items-center gap-4 sm:gap-6 select-none shrink-0"
           >
-            {/* Standard Tailwind font sizing applied to ensure clean compile builds */}
             <span className="text-lg sm:text-xl md:text-2xl font-normal tracking-tight text-zinc-100">
               {item.text}
             </span>
@@ -105,11 +95,11 @@ export default function VelocityMarquee() {
       <div className="absolute inset-y-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
 
-      {/* Row 1: Moves Leftwards */}
-      <MarqueeRow items={row1Items} baseVelocity={-4} />
+      {/* Row 1: Leftwards movement set to ultra smooth slow factor (-0.8) */}
+      <MarqueeRow items={row1Items} baseVelocity={-0.8} />
 
-      {/* Row 2: Moves Rightwards */}
-      <MarqueeRow items={row2Items} baseVelocity={4} />
+      {/* Row 2: Rightwards movement set to ultra smooth slow factor (0.8) */}
+      <MarqueeRow items={row2Items} baseVelocity={0.8} />
       
     </section>
   );
