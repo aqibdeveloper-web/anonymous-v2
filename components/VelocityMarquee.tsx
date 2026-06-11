@@ -35,47 +35,39 @@ const row2Items = [
 
 interface MarqueeRowProps {
   items: Array<{ text: string; img: string }>;
-  baseVelocity: number; // Positive for right, Negative for left
+  baseVelocity: number; 
 }
 
 function MarqueeRow({ items, baseVelocity = 5 }: MarqueeRowProps) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   
-  // User ke scroll karne ki velocity track karein
   const scrollVelocity = useVelocity(scrollY);
   
-  // Velocity ke hisab se transform multiplier banayein
   const velocityFactor = useTransform(scrollVelocity, [0, 1000], [0, 5], {
     clamp: false,
   });
 
-  // Infinite duplicating factor logic for seamless wrap
   const directionFactor = useRef<number>(1);
   
   useAnimationFrame((time, delta) => {
-    // Normal auto-play speed calculation
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
-    // Agar user scroll kar raha hai, toh movement ko smooth boost do
     if (velocityFactor.get() !== 0) {
       moveBy += directionFactor.current * moveBy * velocityFactor.get();
     }
 
     baseX.set(baseX.get() + moveBy);
     
-    // Loop mapping limits (-20% to -45% for multi-duplicated rows)
-    if (baseX.get() <= -50) {
+    // Smooth wrapping mechanic based on standard duplicated sets boundary
+    if (baseX.get() <= -25) {
       baseX.set(0);
     } else if (baseX.get() > 0) {
-      baseX.set(-50);
+      baseX.set(-25);
     }
   });
 
-  // Framer motion loop requires duplicated contents for smooth styling
   const duplicatedItems = [...items, ...items, ...items, ...items];
-
-  // BaseX value ko string percentage mein convert karein
   const x = useTransform(baseX, (v) => `${v}%`);
 
   return (
@@ -86,12 +78,11 @@ function MarqueeRow({ items, baseVelocity = 5 }: MarqueeRowProps) {
             key={idx}
             className="flex items-center gap-4 sm:gap-6 select-none shrink-0"
           >
-            {/* The Text Element */}
-            <span className="text-0.5xl sm:text-1xl md:text-2xl font-normal tracking-tight text-zinc-100">
+            {/* Standard Tailwind font sizing applied to ensure clean compile builds */}
+            <span className="text-lg sm:text-xl md:text-2xl font-normal tracking-tight text-zinc-100">
               {item.text}
             </span>
             
-            {/* Premium Rounded Thumbnails exactly like image_44dd1b.png */}
             <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900/50 aspect-square">
               <img
                 src={item.img}
@@ -111,15 +102,14 @@ export default function VelocityMarquee() {
   return (
     <section className="w-full bg-[#0d0d0d] py-16 md:py-24 overflow-hidden border-b border-zinc-900/40 relative flex flex-col justify-center">
       
-      {/* Soft edge masking layers for professional look */}
       <div className="absolute inset-y-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
 
-      {/* Row 1: Moves Leftwards (Negative velocity) */}
-      <MarqueeRow items={row1Items} baseVelocity={-1.5} />
+      {/* Row 1: Moves Leftwards */}
+      <MarqueeRow items={row1Items} baseVelocity={-4} />
 
-      {/* Row 2: Moves Rightwards (Positive velocity) */}
-      <MarqueeRow items={row2Items} baseVelocity={1.5} />
+      {/* Row 2: Moves Rightwards */}
+      <MarqueeRow items={row2Items} baseVelocity={4} />
       
     </section>
   );

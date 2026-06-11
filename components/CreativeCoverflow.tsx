@@ -41,7 +41,7 @@ export default function CreativeCoverflow() {
       }
     };
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => window.removeMouseMove || window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   // Frame-rate safe index transition engine
@@ -171,7 +171,7 @@ interface CardProps {
 function CoverflowCard({ item, idx, springDragX, activeIndex, step, cardWidth, onCardClick }: CardProps) {
   const basePosition = idx * step;
   
-  // Deep transform mapping matrices for the exact "image_35e0fc.jpg" replication
+  // Deep transform mapping matrices for the exact replication
   const transformRange = [
     -basePosition - step * 2,
     -basePosition - step, 
@@ -186,6 +186,9 @@ function CoverflowCard({ item, idx, springDragX, activeIndex, step, cardWidth, o
   const scale = useTransform(springDragX, transformRange, [0.75, 0.88, 1.04, 0.88, 0.75]);
   const xOffset = useTransform(springDragX, transformRange, [120, 60, 0, -60, -120]);
 
+  // Combined functional transform engine to comply with strict Next.js deployment builds
+  const dynamicX = useTransform(() => basePosition + xOffset.get());
+
   // True deep dark opacity drop for layered side-cards
   const opacity = useTransform(springDragX, transformRange, [0.15, 0.45, 1, 0.45, 0.15]);
 
@@ -197,7 +200,7 @@ function CoverflowCard({ item, idx, springDragX, activeIndex, step, cardWidth, o
         position: "absolute",
         transformOrigin: "center center",
         width: cardWidth,
-        x: useTransform(() => basePosition + xOffset.get()), 
+        x: dynamicX, 
         rotateY: rotateY,
         z: translateZ,
         scale: scale,
@@ -206,7 +209,6 @@ function CoverflowCard({ item, idx, springDragX, activeIndex, step, cardWidth, o
         willChange: "transform, opacity",
       }}
       onClick={onCardClick}
-      // Exact Proportional Elongated Ratio matching image_35e0fc.jpg 
       className="aspect-[9/13.8] rounded-[22px] overflow-hidden bg-[#0a0a0c] border border-white/[0.05] shadow-[0_60px_120px_-30px_rgba(0,0,0,0.98)] flex flex-col justify-end relative pointer-events-auto"
     >
       {/* Structural Glassmorphic Outer Rim Highlight */}
@@ -245,7 +247,7 @@ function CoverflowCard({ item, idx, springDragX, activeIndex, step, cardWidth, o
               transition={{ type: "spring", stiffness: 400, damping: 24 }}
               className="w-full p-5 flex flex-col"
             >
-              <h4 className="text-[15px] font-normal text-zinc-100 tracking-tight mb-2.5 group-hover:text-[#dfaed6] transition-colors drop-shadow-[0_0_8px_rgba(223,174,214,0.1)]">
+              <h4 className="text-[15px] font-normal text-zinc-100 tracking-tight mb-2.5 transition-colors drop-shadow-[0_0_8px_rgba(223,174,214,0.1)]">
                 {item.title}
               </h4>
               

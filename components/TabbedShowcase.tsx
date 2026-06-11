@@ -13,7 +13,7 @@ const serviceFeatures = [
 const processFeatures = [
   { id: 5, tag: "Phase 01", title: "Deep Discovery & Audit", desc: "We map out your direct competitors, audit technical vulnerabilities, and engineer an airtight development blueprint.", img: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=500&q=80" },
   { id: 6, tag: "Phase 02", title: "Interactive UX Wireframing", desc: "Laying out complex user journeys into intuitive, high-fidelity prototypes built entirely for structural retention.", img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&q=80" },
-  { id: 7, tag: "Phase 03", title: "Clean Room Engineering", desc: "Writing highly maintainable, type-safe code optimized for rapid response cycles, scale, and extreme security benchmarks.", img: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=500&q=80" },
+  { id: 7, tag: "Phase 03", title: "Clean Room Engineering", desc: "Writing highly maintainable, type-safe code optimized for rapid response cycles, scale, and extreme security benchmarks.", img: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247 +w=500&q=80" },
   { id: 8, tag: "Phase 04", title: "Optimization & Delivery", desc: "Meticulous stress-testing across devices, structural speed tune-ups, and schema injection before pushing production live.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80" },
 ];
 
@@ -34,7 +34,6 @@ export default function PremiumFeaturesDeck() {
   };
 
   return (
-    // Section se padding horizontal bilkul zero kardi taake full wide content stretch ho ske
     <section className="w-full bg-[#0D0D0D] text-white py-28 overflow-hidden relative select-none">
       
       {/* Cyberpunk Neo-Futuristic Ambient Lights configured with Brand Hexes */}
@@ -42,7 +41,6 @@ export default function PremiumFeaturesDeck() {
       <div className="absolute bottom-12 left-10 w-[600px] h-[450px] bg-gradient-to-tr from-[#dfaed6]/[0.01] to-transparent blur-3xl pointer-events-none rounded-full" />
 
       {/* ================= HEADER CONTROL BAR ================= */}
-      {/* Is header box me screen paddings control ki hain taake text alignment standard max-width me align rahe */}
       <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 px-6 sm:px-12 md:px-20 relative z-20">
         <div className="flex flex-col gap-2.5">
           <span className="text-xs font-semibold text-[#dfaed6] uppercase tracking-widest pl-0.5">
@@ -90,7 +88,6 @@ export default function PremiumFeaturesDeck() {
       </div>
 
       {/* ================= HIGH FIDELITY FULL-WIDTH SLIDER HORIZON ================= */}
-      {/* Is module ki max-width boundary absolute screen-wide width (w-full) me swap kar di hai */}
       <div className="w-full relative group/deck">
         
         {/* Floating Controls with premium layout overlay indices */}
@@ -122,7 +119,7 @@ export default function PremiumFeaturesDeck() {
         <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-20 md:w-32 bg-gradient-to-r from-[#050507] to-transparent z-20 pointer-events-none" />
         <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-20 md:w-32 bg-gradient-to-l from-[#050507] to-transparent z-20 pointer-events-none" />
 
-        {/* Full Wide Drag Scroll Track with custom padding start offset to make first card align perfectly */}
+        {/* Full Wide Drag Scroll Track */}
         <div 
           ref={sliderRef}
           className="w-full overflow-x-auto flex gap-6 scrollbar-none snap-x snap-mandatory py-6 pl-6 sm:pl-12 md:pl-20 pr-32"
